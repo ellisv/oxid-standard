@@ -1,0 +1,6 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_host:     127.0.0.1
+    database_name:     oxid
+    database_user:     root
+    database_password: ~

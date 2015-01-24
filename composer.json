@@ -4,6 +4,22 @@
     "type": "project",
     "description": "The \"Oxid Standard Edition\" distribution",
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "ellis/oxid-framework-bundle": "dev-master",
+        "symfony/monolog-bundle": "~2.6",
+        "incenteev/composer-parameter-handler": "~2.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ]
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        }
     }
 }
