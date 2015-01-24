@@ -1,0 +1,9 @@
+{
+    "name": "ellisv/oxid-standard",
+    "license": "MIT",
+    "type": "project",
+    "description": "The \"Oxid Standard Edition\" distribution",
+    "require": {
+        "php": ">=5.3.3"
+    }
+}
