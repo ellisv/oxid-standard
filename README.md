@@ -1,1 +1,1 @@
-# oxid-standard
+# OXID Standard Edition
