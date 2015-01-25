@@ -20,20 +20,27 @@
  * @version   OXID eShop CE
  */
 
+    // Some third-party libraries may use this file without bootstrapping OXID.
+    // To prevent this we will initialize kernel if it was not initialized yet.
+    require_once __DIR__ . '/kernelbootstrap.php';
+
+    global $kernel;
+    $container = $kernel->getContainer();
+
     /** @name database information */
-    $this->dbHost = '<dbHost_ce>'; // database host name
-    $this->dbName = '<dbName_ce>'; // database name
-    $this->dbUser = '<dbUser_ce>'; // database user name
-    $this->dbPwd  = '<dbPwd_ce>'; // database user password
+    $this->dbHost = $container->getParameter('database_host'); // database host name
+    $this->dbName = $container->getParameter('database_name'); // database name
+    $this->dbUser = $container->getParameter('database_user'); // database user name
+    $this->dbPwd  = $container->getParameter('database_password'); // database user password
     $this->dbType = 'mysql';
     $this->sShopURL     = '<sShopURL_ce>'; // eShop base url, required
     $this->sSSLShopURL  = null;            // eShop SSL url, optional
     $this->sAdminSSLURL = null;            // eShop Admin SSL url, optional
-    $this->sShopDir     = '<sShopDir_ce>';
-    $this->sCompileDir  = '<sCompileDir_ce>';
+    $this->sShopDir     = __DIR__;
+    $this->sCompileDir  = $kernel->getCacheDir().'/oxid';
 
     // UTF-8 mode in shop 0 - off, 1 - on
-    $this->iUtfMode  = '<iUtfMode>';
+    $this->iUtfMode  = 1;
 
     // File type whitelist for file upload
     $this->aAllowedUploadTypes = array('jpg', 'gif', 'png', 'pdf', 'mp3', 'avi', 'mpg', 'mpeg', 'doc', 'xls', 'ppt');

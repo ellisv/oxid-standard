@@ -22,5 +22,11 @@
 
 require_once dirname(__FILE__) . "/bootstrap.php";
 
+global $kernel;
+
+if ($kernel !== null && $kernel->isDebug()) {
+    Symfony\Component\Debug\Debug::enable();
+}
+
 //Starts the shop
 Oxid::run();

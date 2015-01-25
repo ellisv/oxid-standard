@@ -33,6 +33,12 @@ if (!defined('OX_BASE_PATH')) {
     define('OX_BASE_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 }
 
+// load composer autoloader
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// initialize kernel
+require_once __DIR__ . '/kernelbootstrap.php';
+
 // custom functions file
 require_once OX_BASE_PATH . 'modules/functions.php';
 
