@@ -28,19 +28,19 @@
     $container = $kernel->getContainer();
 
     /** @name database information */
-    $this->dbHost = $container->getParameter('database_host'); // database host name
-    $this->dbName = $container->getParameter('database_name'); // database name
-    $this->dbUser = $container->getParameter('database_user'); // database user name
-    $this->dbPwd  = $container->getParameter('database_password'); // database user password
+    $this->dbHost = $container->getParameter('oxid.database.host');     // database host name
+    $this->dbName = $container->getParameter('oxid.database.name');     // database name
+    $this->dbUser = $container->getParameter('oxid.database.user');     // database user name
+    $this->dbPwd  = $container->getParameter('oxid.database.password'); // database user password
     $this->dbType = 'mysql';
-    $this->sShopURL     = '<sShopURL_ce>'; // eShop base url, required
-    $this->sSSLShopURL  = null;            // eShop SSL url, optional
-    $this->sAdminSSLURL = null;            // eShop Admin SSL url, optional
+    $this->sShopURL     = $container->getParameter('oxid.shop_url');      // eShop base url, required
+    $this->sSSLShopURL  = $container->getParameter('oxid.shop_ssl_url');  // eShop SSL url, optional
+    $this->sAdminSSLURL = $container->getParameter('oxid.admin_ssl_url'); // eShop Admin SSL url, optional
     $this->sShopDir     = __DIR__;
-    $this->sCompileDir  = $kernel->getCacheDir().'/oxid';
+    $this->sCompileDir  = $container->getParameter('oxid.compile_dir');
 
     // UTF-8 mode in shop 0 - off, 1 - on
-    $this->iUtfMode  = 1;
+    $this->iUtfMode = 1;
 
     // File type whitelist for file upload
     $this->aAllowedUploadTypes = array('jpg', 'gif', 'png', 'pdf', 'mp3', 'avi', 'mpg', 'mpeg', 'doc', 'xls', 'ppt');

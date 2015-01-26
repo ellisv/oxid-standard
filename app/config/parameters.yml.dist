@@ -4,3 +4,4 @@ parameters:
     database_name:     oxid
     database_user:     root
     database_password: ~
+    shop_url:          'http://localhost'

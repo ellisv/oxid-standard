@@ -1,3 +1,11 @@
 imports:
     - { resource: parameters.yml }
     - { resource: services.yml }
+
+framework:
+    database:
+        host: '%database_host%'
+        name: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+    shop_url: '%shop_url%'
