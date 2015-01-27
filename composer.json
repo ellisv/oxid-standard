@@ -11,10 +11,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::clearCache"
         ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::clearCache"
         ]
     },
     "extra": {
