@@ -1,4 +1,4 @@
 OXID Standard Edition
 =====================
 
-OXID Version: CE 4.9.2
+OXID Version: CE 4.9.3
