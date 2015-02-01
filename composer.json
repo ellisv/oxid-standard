@@ -12,10 +12,12 @@
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::installDatabase",
             "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::clearCache"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::installDatabase",
             "Ellis\\Oxid\\Bundle\\FrameworkBundle\\Composer\\ScriptHandler::clearCache"
         ]
     },
