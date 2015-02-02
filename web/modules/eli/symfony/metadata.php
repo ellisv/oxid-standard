@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Symfony Bridge module for OXID.
+ *
+ * (c) Eligijus Vitkauskas <eligijusvitkauskas@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 /**
  * Metadata version
  */
@@ -10,8 +19,8 @@ $sMetadataVersion = '1.2';
  */
 $aModule = array(
     'id'          => 'elisymfony',
-    'title'       => 'Symfony Bridge module',
-    'description' => 'Adapts Symfony components into the shop',
+    'title'       => 'Symfony Bridge',
+    'description' => 'Provides integration for OXID with various Symfony components',
     'thumbnail'   => '',
     'version'     => '0.0.1-DEV',
     'author'      => 'Eligijus Vitkauskas',
