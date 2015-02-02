@@ -7,9 +7,9 @@ Provides integration for OXID with various Symfony components.
 
 * OXID eShop 5.2.x/4.9.x
 * Composer autoloader
-* Globally accessable $kernel variable which stores an object which is an instance of Symfony\Component\HttpKernel\KernelInterface
-* symfony/dependency-injection component
-* symfony/debug component
+* Globally accessable `$kernel` variable which stores an object which is an instance of `Symfony\Component\HttpKernel\KernelInterface`
+* `symfony/dependency-injection` component
+* `symfony/debug` component
 
 ## Installation
 
