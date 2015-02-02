@@ -11,6 +11,11 @@ Provides integration for OXID with various Symfony components.
 * `symfony/dependency-injection` component
 * `symfony/debug` component
 
+## Features
+
+* Provides integration with Symfony/Debug component if kernel is in debug mode
+* Automatically injects Container to objects which were created with `oxNew()` (`oxRegistry::get()` also, because it uses `oxNew()` internally) and implements ContainerAwareInterface
+
 ## Installation
 
 Activate the module in administration area.
