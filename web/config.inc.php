@@ -27,6 +27,11 @@
     global $kernel;
     $container = $kernel->getContainer();
 
+    $compileDir = $container->getParameter('oxid.compile_dir');
+    if (!is_dir($compileDir)) {
+        mkdir($compileDir);
+    }
+
     /** @name database information */
     $this->dbHost = $container->getParameter('oxid.database.host');     // database host name
     $this->dbName = $container->getParameter('oxid.database.name');     // database name
@@ -37,7 +42,7 @@
     $this->sSSLShopURL  = $container->getParameter('oxid.shop_ssl_url');  // eShop SSL url, optional
     $this->sAdminSSLURL = $container->getParameter('oxid.admin_ssl_url'); // eShop Admin SSL url, optional
     $this->sShopDir     = __DIR__;
-    $this->sCompileDir  = $container->getParameter('oxid.compile_dir');
+    $this->sCompileDir  = $compileDir;
 
     // UTF-8 mode in shop 0 - off, 1 - on
     $this->iUtfMode = 1;
