@@ -27,7 +27,9 @@ $aModule = array(
     'url'         => 'https://github.com/EllisV',
     'email'       => 'eligijusvitkauskas@gmail.com',
     'extend'      => array(
+        'oxconfig'      => 'eli/symfony/core/elisymfonyoxconfig',
         'oxshopcontrol' => 'eli/symfony/core/elisymfonyoxshopcontrol',
+        'oxutils'       => 'eli/symfony/core/elisymfonyoxutils',
         'oxutilsobject' => 'eli/symfony/core/elisymfonyoxutilsobject',
     ),
     'files'       => array(),
