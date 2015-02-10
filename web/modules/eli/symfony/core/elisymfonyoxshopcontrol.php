@@ -139,17 +139,7 @@ class eliSymfonyOxShopControl extends eliSymfonyOxShopControl_parent implements 
      */
     protected function _isKernelInDebug()
     {
-        return $this->getContainer()->get('kernel')->isDebug();
-    }
-
-    /**
-     * Get container
-     *
-     * @return ContainerInterface
-     */
-    protected function getContainer()
-    {
-        return $this->_oContainer;
+        return $this->_oContainer->get('kernel')->isDebug();
     }
 
     /**
