@@ -107,7 +107,7 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     protected function _parseExceptionMessage($sMessage)
     {
         $aMatches = array();
-        preg_match('/(\S*) \(time: .+\): \[.*\]: (.*) \n Stack Trace: (.*)\n?#\d+ {main}/s', $sMessage, $aMatches);
+        preg_match('/(\S*) \(time: .+\): \[.*\]: (.*) \n Stack Trace: (.*)\n#\d+ {main}/s', $sMessage, $aMatches);
 
         return array(
             'class'       => $aMatches[1],
