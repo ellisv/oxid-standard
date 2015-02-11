@@ -27,8 +27,8 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     /**
      * Processes debug logging.
      *
-     * If logger service is available then we process it as
-     * debug output. Otherwise we call default OXID behavior.
+     * If logger service is available then we process it as debug output.
+     * Otherwise we call default OXID behavior.
      *
      * @param string $sText
      * @param bool   $blNewline
@@ -51,15 +51,13 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     /**
      * Writes given log message.
      *
-     * If logger service is available then we perform a check
-     * on a filename to determine what kind of output it should
-     * be on a logger service and if filename happens to be
-     * an exception log file name than we also parse this log
-     * message because we are unable to overwritte
+     * If logger service is available then we perform a check on a filename to
+     * determine what kind of output it should be on a logger service and if
+     * filename happens to be an exception log file name than we also parse
+     * this log message because we are unable to overwritte
      * oxException::debugOut().
      *
-     * If logger service is unavailable then we call default
-     * OXID behavior.
+     * If logger service is unavailable then we call default OXID behavior.
      *
      * @param string $sLogMessage  log message
      * @param string $sLogFileName log file name
@@ -96,13 +94,11 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     /**
      * Performs a parsing on an exception log message.
      *
-     * This is only applicable for oxException generated log
-     * messages.
+     * This is only applicable for oxException generated log messages.
      *
      * NOTE: We are unable to overwrite oxException class and
-     * oxException::debugOut() is responsible for logging
-     * exceptions. To still have a nice output at our logs we
-     * parse those exceptions messages.
+     * oxException::debugOut() is responsible for logging exceptions. To still
+     * have a nice output at our logs we parse those exceptions messages.
      *
      * @param string $sMessage
      *
