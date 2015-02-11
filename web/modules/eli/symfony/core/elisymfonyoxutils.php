@@ -13,9 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * An extension of core oxUtils class.
- *
- * Overwrittes default logging methods
+ * An extension of core oxUtils class to overwritte default logging methods
  *
  * @see oxUtils
  */
@@ -27,10 +25,13 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     protected $_oContainer;
 
     /**
-     * Processes logging.
+     * Processes debug logging.
      *
-     * @param string $sText     Log message text
-     * @param bool   $blNewline If true, writes message to new line (default false) (only for default behavior)
+     * If logger service is available then we process it as
+     * debug output. Otherwise we call default OXID behavior.
+     *
+     * @param string $sText
+     * @param bool   $blNewline
      */
     public function logger($sText, $blNewline = false)
     {
@@ -48,7 +49,17 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
     }
 
     /**
-     * Writes given log message. Returns write state
+     * Writes given log message.
+     *
+     * If logger service is available then we perform a check
+     * on a filename to determine what kind of output it should
+     * be on a logger service and if filename happens to be
+     * an exception log file name than we also parse this log
+     * message because we are unable to overwritte
+     * oxException::debugOut().
+     *
+     * If logger service is unavailable then we call default
+     * OXID behavior.
      *
      * @param string $sLogMessage  log message
      * @param string $sLogFileName log file name
@@ -82,6 +93,21 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
         return true;
     }
 
+    /**
+     * Performs a parsing on an exception log message.
+     *
+     * This is only applicable for oxException generated log
+     * messages.
+     *
+     * NOTE: We are unable to overwrite oxException class and
+     * oxException::debugOut() is responsible for logging
+     * exceptions. To still have a nice output at our logs we
+     * parse those exceptions messages.
+     *
+     * @param string $sMessage
+     *
+     * @return array with class, message and stack_trace keys
+     */
     protected function _parseExceptionMessage($sMessage)
     {
         $aMatches = array();
@@ -94,6 +120,13 @@ class eliSymfonyOxUtils extends eliSymfonyOxUtils_parent implements ContainerAwa
         );
     }
 
+    /**
+     * Parse stack trace string to the associative array
+     *
+     * @param string $sStackTrace
+     *
+     * @return array
+     */
     protected function _parseStackTrace($sStackTrace)
     {
         $aStack = explode("\n", $sStackTrace);
