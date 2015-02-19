@@ -15,6 +15,7 @@ Provides integration for OXID with various Symfony components.
 
 * Provides integration with Symfony/Debug component if kernel is in debug mode
 * Automatically injects Container to objects which were created with `oxNew()` (`oxRegistry::get()` also, because it uses `oxNew()` internally) and implements ContainerAwareInterface
+* Integration for PSR-3 logging if logger service is available
 
 ## Installation
 
