@@ -12,8 +12,8 @@ env:
 
 before_install:
     - composer self-update
-    - npm install -g npm@'>=2.1.5'
     - npm install -g grunt-cli bower
+    - gem install compass
 
 install:
     - composer install --prefer-source
