@@ -5,3 +5,8 @@
 !/app/logs/.gitkeep
 /vendor/
 /composer.phar
+/node_modules/
+/app/Resources/bower_components/
+/.sass-cache/
+/web/out/frontend/img/
+/web/out/frontend/src/

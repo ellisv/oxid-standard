@@ -1,0 +1,8 @@
+{
+  "name": "EllisV/oxid-standard",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.2",
+    "jquery": "1.11.2"
+  }
+}
