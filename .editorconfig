@@ -22,3 +22,6 @@ trim_trailing_whitespace = false
 
 [*.{js,sass,scss}]
 indent_size = 2
+
+[{package,bower,concat}.json]
+indent_size = 2
