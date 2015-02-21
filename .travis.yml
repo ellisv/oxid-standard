@@ -12,6 +12,7 @@ env:
 
 before_install:
     - composer self-update
+    - npm install -g npm@'>=2.1.5'
     - npm install -g grunt-cli bower
 
 install:
@@ -20,4 +21,4 @@ install:
     - bower install
 
 script:
-    - grunt jshint
+    - grunt default
