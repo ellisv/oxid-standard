@@ -1,0 +1,7 @@
+.btn {
+
+  // Add animation for button hovering
+  transition:
+    background-color 200ms ease-out,
+    border-color 200ms ease-out;
+}

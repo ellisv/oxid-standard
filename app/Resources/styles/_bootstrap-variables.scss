@@ -1,1 +1,44 @@
+//
 // Use this file to overwritte default bootstrap variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$brand-primary: #627f9a;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:      Lato,  Georgia, "Times New Roman", Times, serif;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$border-radius-base:  0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-default-color:  #fff;
+$btn-default-bg:     #d26e4b;
+$btn-default-border: darken(#d26e4b, 5%);
+
+
+//== Forms
+//
+//##
+
+//** Border color for inputs on focus
+$input-border-focus: #999;

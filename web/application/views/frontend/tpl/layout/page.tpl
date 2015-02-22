@@ -1,0 +1,16 @@
+[{capture append="oxidBlock_pageBody"}]
+    [{include file="layout/header.tpl"}]
+    <div class="container">
+        [{foreach from=$oxidBlock_content item="_block"}]
+            [{$_block}]
+        [{/foreach}]
+    </div>
+    [{include file="layout/footer.tpl"}]
+    [{if $oView->getClassName() != "details"}]
+        [{insert name="oxid_tracker" title=$oView->getTitle()}]
+    [{/if}]
+[{/capture}]
+[{capture append="oxidBlock_pagePopup"}]
+    [{include file="widget/header/loginbox.tpl"}]
+[{/capture}]
+[{include file="layout/base.tpl"}]

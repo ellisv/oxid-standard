@@ -1,0 +1,75 @@
+$footer-primary-color:    #999;
+$footer-primary-bg-color: #5b5b5b;
+
+$footer-secondary-color:      #ddd;
+$footer-secondary-bg-color:   #777;
+$footer-secondary-link-color: #fff;
+
+.footer-primary {
+  padding: 15px 0;
+  background-color: $footer-primary-bg-color;
+
+  .list-inline {
+    margin-bottom: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid lighten($footer-primary-bg-color, 5%); // #6a6a6a
+    padding-bottom: 4px;
+  }
+
+  &, a {
+    color: $footer-primary-color;
+  }
+
+  a:hover {
+    color: lighten($footer-primary-color, 25%);
+    text-decoration: none;
+  }
+}
+
+.footer-secondary {
+  margin-top: 20px;
+  padding: 30px 0;
+  background-color: $footer-secondary-bg-color;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 3px solid lighten($footer-secondary-bg-color, 15%);
+    padding-bottom: 6px;
+  }
+
+  h3, a {
+    color: $footer-secondary-link-color;
+  }
+
+  &, a:hover {
+    color: $footer-secondary-color;
+    text-decoration: none;
+  }
+
+
+  .tag-cloud-item {
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 6px;
+    margin: 0 3px 4px 0;
+    border: 1px solid #c8c8c8;
+    color: #c8c8c8;
+    white-space: nowrap;
+
+    &:hover {
+      color: #333;
+      background-color: #fff;
+      border-color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    list-style-type: square;
+    font-size: 14px;
+    padding-left: 15px;
+  }
+}

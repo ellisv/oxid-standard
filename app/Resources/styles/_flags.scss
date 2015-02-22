@@ -1,0 +1,15 @@
+.flag {
+  display: inline-block;
+  @include sprite-sprite(flag-blank);
+  width: sprite-sprite-width(flag-blank) + 2px;
+  height: sprite-sprite-height(flag-blank) + 2px;
+  border: 1px solid #666;
+}
+
+.flag-en {
+  @include sprite-sprite(flag-en);
+}
+
+.flag-de {
+  @include sprite-sprite(flag-de);
+}
