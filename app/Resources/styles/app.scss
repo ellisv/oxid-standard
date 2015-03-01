@@ -2,7 +2,11 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-compass";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
-@import "sprites";
-@import "flags";
+@import "jasny-bootstrap/scss/variables";
+@import "jasny-bootstrap/scss/offcanvas";
+@import "jasny-bootstrap/scss/navmenu";
+
+@import "icons";
 @import "buttons";
 @import "footer";
+@import "navbar";

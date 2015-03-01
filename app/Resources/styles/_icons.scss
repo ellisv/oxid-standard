@@ -1,5 +1,10 @@
-.flag {
+@import "sprite/*.png";
+
+.icon, .flag {
   display: inline-block;
+}
+
+.flag {
   @include sprite-sprite(flag-blank);
   width: sprite-sprite-width(flag-blank) + 2px;
   height: sprite-sprite-height(flag-blank) + 2px;
@@ -12,4 +17,10 @@
 
 .flag-de {
   @include sprite-sprite(flag-de);
+}
+
+.icon-cart {
+  @include sprite-sprite(shopping-bag);
+  width: sprite-sprite-width(shopping-bag);
+  height: sprite-sprite-height(shopping-bag);
 }

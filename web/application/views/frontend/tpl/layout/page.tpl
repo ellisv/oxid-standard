@@ -1,5 +1,6 @@
 [{capture append="oxidBlock_pageBody"}]
-    [{include file="layout/header.tpl"}]
+    [{include file="layout/offcanvas.tpl" id="myNavmenu"}]
+    [{include file="layout/header.tpl" offcanvasId="myNavmenu"}]
     <div class="container">
         [{foreach from=$oxidBlock_content item="_block"}]
             [{$_block}]
