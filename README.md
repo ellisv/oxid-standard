@@ -7,5 +7,5 @@ OXID Version: CE 4.9.3
 
 | Directories                      | License        |
 |----------------------------------|----------------|
-| /web/<br>!/web/application/views/frontend<br>!/web/modules/eli | [GPL v3](OXID-LICENSE) |
+| /web/<br>!/web/application/views/frontend<br>!/web/modules/eli | [GPL v3](OXID-LICENSE) held by OXID eSales AG |
 | Any other files                  | [MIT](LICENSE) |
