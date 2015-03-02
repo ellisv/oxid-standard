@@ -6,7 +6,9 @@
 @import "jasny-bootstrap/scss/offcanvas";
 @import "jasny-bootstrap/scss/navmenu";
 
+@import "navmenu"; // Extension of jasny-bootstrap navmenu
+@import "buttons"; // Extension of bootstrap buttons
+
 @import "icons";
-@import "buttons";
 @import "footer";
 @import "navbar";
