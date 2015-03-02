@@ -23,4 +23,11 @@
   @include sprite-sprite(shopping-bag);
   width: sprite-sprite-width(shopping-bag);
   height: sprite-sprite-height(shopping-bag);
+  position: relative;
+
+  .badge {
+    position: absolute;
+    left: -11px;
+    top: -7px;
+  }
 }

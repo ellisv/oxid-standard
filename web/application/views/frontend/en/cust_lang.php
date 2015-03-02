@@ -4,6 +4,6 @@ $sLangName  = "English";
 
 $aLang = array(
     'charset' => 'UTF-8',
-    'CURRENT' => 'Current'
-
+    'CURRENT' => 'Current',
+    'TOGGLE_NAVIGATION' => 'Toggle navigation'
 );

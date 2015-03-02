@@ -1,139 +1,44 @@
-<header role="banner">
-    <div class="container">
-        <button type="button" class="visible-xs-inline-block pull-left" data-toggle="offcanvas" data-target="#[{$offcanvasId}]" data-canvas="body">
-            <span class="sr-only">Toggle navigation</span>
+<header role="banner" class="header">
+    <div class="header-primary container">
+        <button type="button" class="visible-xs-inline-block offcanvas-toggle pull-left" data-toggle="offcanvas" data-target="#[{$offcanvasId}]" data-canvas="body">
+            <span class="sr-only">[{oxmultilang ident="TOGGLE_NAVIGATION"}]</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
         [{assign var="sLogoImg" value=$oViewConf->getShopLogo()}]
-        <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
+        <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="brand">
             <img src="[{$oViewConf->getImageUrl($sLogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
         </a>
         <nav class="pull-right">
-            <ul class="nav nav-pills">
-                <li role="presentation" class="dropdown hidden-xs">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Account <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown hidden-xs">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        EUR <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="active"><a href="#">EUR <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">USD</a></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown hidden-xs">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="flag flag-en"></i> <span class="sr-only">English</span> <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="active"><a href="#"><i class="flag flag-en"></i> English <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#"><i class="flag flag-de"></i> German</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="icon icon-cart">
-                        <span class="badge">0</span>
-                        <span class="sr-only">Shopping cart</span>
-                    </a>
-                </li>
+            <ul class="nav nav-pills nav-sm">
+                [{if $oxcmp_user || $oView->getCompareItemCount() || $Errors.loginBoxErrors}]
+                    [{assign var="blAnon" value=0}]
+                    [{assign var="force_sid" value=$oView->getSidForWidget()}]
+                [{else}]
+                    [{assign var="blAnon" value=1}]
+                [{/if}]
+                [{oxid_include_widget cl="oxwServiceMenu" _parent=$oView->getClassName() force_sid=$force_sid nocookie=$blAnon _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
+                [{oxid_include_widget cl="oxwCurrencyList" cur=$oViewConf->getActCurrency() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
+                [{oxid_include_widget cl="oxwLanguageList" lang=$oViewConf->getActLanguageId() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
+                [{if $oxcmp_basket->getProductsCount()}]
+                    [{assign var="blAnon" value=0}]
+                    [{assign var="force_sid" value=$oView->getSidForWidget()}]
+                [{else}]
+                    [{assign var="blAnon" value=1}]
+                [{/if}]
+                [{oxid_include_widget cl="oxwMiniBasket" nocookie=$blAnon force_sid=$force_sid}]
             </ul>
         </nav>
     </div>
-    <div class="container hidden-xs">
+    <div class="header-secondary container hidden-xs">
         <div class="row">
-            <nav class="col-md-8">
-                <ul class="nav nav-pills">
-                    <li><a href="#">Kiteboarding <i class="caret"></i></a></li>
-                    <li><a href="#">Wakeboarding <i class="caret"></i></a></li>
-                    <li><a href="#">Gear <i class="caret"></i></a></li>
-                    <li><a href="#">Special Offers (2)</a></li>
-                    <li><a href="#">More <i class="caret"></i></a></li>
-                </ul>
+            <nav class="col-lg-9">
+                [{oxid_include_widget cl="oxwCategoryTree" cnid=$oView->getCategoryId() sWidgetType="header" _parent=$oView->getClassName() nocookie=1}]
             </nav>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                </div>
+            <div class="col-lg-3 header-search">
+                [{include file="widget/header/search.tpl"}]
             </div>
         </div>
     </div>
 </header>
-
-[{* <header role="banner">
-    <div class="container">
-        [{assign var="sLogoImg" value=$oViewConf->getShopLogo()}]
-        <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
-            <img src="[{$oViewConf->getImageUrl($sLogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
-        </a>
-
-        <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    Account <i class="caret"></i>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-            </li>
-            <li role="presentation" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    EUR <i class="caret"></i>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="active"><a href="#">EUR <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">USD</a></li>
-                </ul>
-            </li>
-            <li role="presentation" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <i class="flag flag-en"></i> <span class="sr-only">English</span> <i class="caret"></i>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="active"><a href="#"><i class="flag flag-en"></i> English <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#"><i class="flag flag-de"></i> German</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="icon icon-cart">
-                    <span class="badge">0</span>
-                    <span class="sr-only">Shopping cart</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <nav class="col-md-8">
-                <ul class="nav nav-pills">
-                    <li><a href="#">Kiteboarding <i class="caret"></i></a></li>
-                    <li><a href="#">Wakeboarding <i class="caret"></i></a></li>
-                    <li><a href="#">Gear <i class="caret"></i></a></li>
-                    <li><a href="#">Special Offers (2)</a></li>
-                    <li><a href="#">More <i class="caret"></i></a></li>
-                </ul>
-            </nav>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header> *}]

@@ -1,5 +1,5 @@
 [{if $oView->showSearch()}]
-    <form action="[{$oViewConf->getSelfActionLink()}]" method="get" name="search" role="search" class="navmenu-form">
+    <form action="[{$oViewConf->getSelfActionLink()}]" method="get" name="search" role="search">
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="cl" value="search">
         [{assign var="currency" value=$oView->getActCurrency()}]

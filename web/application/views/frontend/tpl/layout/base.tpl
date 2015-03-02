@@ -71,8 +71,6 @@
         [{$_block}]
     [{/foreach}]
 
-    [{* TODO: Import this locally *}]
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     [{oxstyle}]
 
     <!--[if lt IE 9]>
