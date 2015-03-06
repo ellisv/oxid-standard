@@ -42,3 +42,7 @@
         </div>
     </div>
 </header>
+
+[{if $oView->getClassName() == "start"}]
+    [{include file="widget/promoslider.tpl" }]
+[{/if}]

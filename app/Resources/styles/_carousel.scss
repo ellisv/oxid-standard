@@ -1,0 +1,59 @@
+$carousel-indicator-size:           11px !default;
+$carousel-indicator-opacity:        .7 !default;
+$carousel-indicator-active-opacity: .9 !default;
+
+.carousel-inner > .item {
+  > img,
+  > a > img {
+    width: 100%;
+  }
+}
+
+.carousel-control {
+  &.left, &.right {
+    background-image: none;
+    filter: initial;
+  }
+}
+
+.carousel-indicators {
+  li {
+    width: $carousel-indicator-size;
+    height: $carousel-indicator-size;
+    border-width: 2px;
+    @include opacity($carousel-indicator-opacity);
+  }
+  .active {
+    width: $carousel-indicator-size + 2px;
+    height: $carousel-indicator-size + 2px;
+    @include opacity($carousel-indicator-active-opacity);
+  }
+  li, .active {
+    transition: background-color 200ms ease-out
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .carousel-indicators {
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .carousel:hover .carousel-control {
+    visibility: visible;
+    @include opacity($carousel-control-opacity);
+    transition-delay: 0s;
+
+    &:hover,
+    &:focus {
+      @include opacity(.9);
+    }
+  }
+
+  .carousel-control {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 150ms, opacity 150ms linear;
+  }
+}
